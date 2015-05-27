@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Maptest</title>
+		<link href="map.css" rel="stylesheet" type="text/css">
+		<link href="chosen.css" rel="stylesheet" type="text/css">
+		<script src="js.js"></script>
+		<script src="chosen.jquery.min.js"></script>
+		<script src="https://cdn.firebase.com/js/client/2.1.0/firebase.js"></script>
+		<script src="imagemapster.js"></script>
+		<script src="map2.js"></script>
+	</head>
+	<body>
+		<div class="overallwrap">
+			<div onclick="mapchange(1)" id="b1" class="activefl">Floor 1</div>
+			<div onclick="mapchange(2)"id="b2">Floor 2</div>
+			<div onclick="showdirectory()" id="b3">Directory</div>
+			<select id="roomdata" data-placeholder="Choose a Room: " onchange="changeroom()">
+				<option value=""></option>
+				<option value="98">98</option>
+				<option value="99">99</option>
+				<option value="100">100</option>
+				<option value="101">101</option>
+				<option value="102">102</option>
+				<option value="103">103</option>
+				<option value="104">104</option>
+				<option value="105">105</option>
+				<option value="106">106</option>
+				<option value="107">107</option>
+				<option value="108">108</option>
+				<option value="109">109</option>
+				<option value="110">110</option>
+				<option value="112">112</option>
+				<option value="114">114</option>
+				<option value="114A">114A</option>
+				<option value="115">115</option>
+				<option value="116">116</option>
+				<option value="118">118</option>
+				<option value="120">120</option>
+				<option value="122">122</option>
+				<option value="124">124</option>
+				<option value="126">126</option>
+				<option value="128">128</option>
+				<option value="130">130</option>
+				<option value="132">132</option>
+				<option value="136">136</option>
+				<option value="138">138</option>
+				<option value="140">140</option>
+				<option value="140A">140A</option>
+				<option value="142">142</option>
+				<option value="143">143</option>
+				<option value="144">144</option>
+				<option value="145">145</option>
+				<option value="146">146</option>
+				<option value="200">200</option>
+				<option value="201">201</option>
+				<option value="203">203</option>
+				<option value="204">204</option>
+				<option value="205">205</option>
+				<option value="206">206</option>
+				<option value="207">207</option>
+				<option value="208">208</option>
+				<option value="209">209</option>
+				<option value="210">210</option>
+				<option value="211">211</option>
+				<option value="212">212</option>
+				<option value="213">213</option>
+				<option value="214">214</option>
+				<option value="215">215</option>
+				<option value="216">216</option>
+				<option value="218">218</option>
+				<option value="220">220</option>
+				<option value="224">224</option>
+				<option value="226">226</option>
+				<option value="228">228</option>
+				<option value="229">229</option>
+				<option value="230A">230A</option>
+				<option value="230B">230B</option>
+				<option value="230C">230C</option>
+				<option value="230C">230D</option>
+				<option value="230E">230E</option>
+				<option value="230F">230F</option>
+				<option value="230-1">230-1</option>
+				<option value="230-2">230-2</option>
+				<option value="232">232</option>
+				<option value="236">236</option>
+				<option value="238">238</option>
+				<option value="240">240</option>
+				<option value="243">243</option>
+				<option value="244">244</option>
+				<option value="245">245</option>
+				<option value="246">246</option>
+			</select>
+
+			<div class="swapper" id="first">
+				<img id="mapimg" src="map1c.png" border="0" width="837" height="400" orgWidth="837" orgHeight="400" usemap="#mapimg" alt="mapimg"/>
+				<map name="mapimg" id="areamap">
+					<area id="98" alt="98" title="98" href="#" shape="rect" coords="17,127,84,295"  target="_self"/>
+					<area id="99" alt="99" title="99" href="#" shape="rect" coords="88,127,157,295"  target="_self"/>
+					<area id="136" alt="136" title="136" href="#" shape="rect" coords="161,165,230,193"  target="_self"/>
+					<area id="132" alt="132" title="132" href="#" shape="rect" coords="161,197,230,225"  target="_self"/>
+					<area id="126" alt="126" title="126" href="#" shape="rect" coords="307,298,336,350"  target="_self"/>
+					<area id="124" alt="124" title="124" href="#" shape="rect" coords="340,298,369,350"  target="_self"/>
+					<area id="109" alt="109" title="109" href="#" shape="rect" coords="724,162,787,226"  target="_self"/>
+					<area id="102" alt="102" title="102" href="#" shape="rect" coords="471,92,512,133"  target="_self"/>
+					<area id="100" alt="100" title="100" href="#" shape="rect" coords="494,70,512,88"  target="_self"/>
+					<area id="140a" alt="140a" title="140A" href="#" shape="rect" coords="275,58,298,77.5"  target="_self"/>
+					<area id="138" alt="138" title="138" href="#" shape="poly" coords="161,127,161,161,250,161,250,137,229,137,229,127"  target="_self"/>
+					<area id="130" alt="130" title="130" href="#" shape="poly" coords="161,229,161,295,233,295,233,304,251,304,251,229"  target="_self"/>
+					<area id="128" alt="128" title="128" href="#" shape="poly" coords="270,298,270,328,260,328,260,350,303,350,303,298"  target="_self"/>
+					<area id="122" alt="122" title="122" href="#" shape="poly" coords="373,300,373,350,415,350,437,346,428,294,405,299,405,299,374,298" target="_self"/>
+					<area id="120" alt="120" title="120" href="#" shape="poly" coords="431,294,461,289,469,341,440,346"  target="_self"/>
+					<area id="118" alt="118" title="118" href="#" shape="poly" coords="467,307,473,341,520,333,515,299"  target="_self"/>
+					<area id="116" alt="116" title="116" href="#" shape="poly" coords="523,274,544,271,553,328,523,333,516,287,524,286"  target="_self"/>
+					<area id="114A" alt="114A" title="114A" href="#" shape="poly" coords="551,297,583,292,588,322,557,327"  target="_self"/>
+					<area id="114" alt="114" title="114" href="#" shape="poly" coords="546,260,599,260,608,319,591,322,585,288,551,294"  target="_self"/>
+					<area id="112" alt="112" title="112" href="#" shape="poly" coords="602,260,653,260,653,312,612,318"  target="_self"/>
+					<area id="107" alt="107" title="107" href="#" shape="poly" coords="654,154,698,154,698,162,720,162,720,226,654,226"  target="_self"/>
+					<area id="105" alt="105" title="105" href="#" shape="poly" coords="610,154,650,154,650,226,587,226,587,161,609,161,610,161"  target="_self"/>
+					<area id="103" alt="103" title="103" href="#" shape="poly" coords="516,154,560,154,560,161,583,161,584,226,516,226"  target="_self"/>
+					<area id="110" alt="110" title="110" href="#" shape="poly" coords="724,58,787,58,787,124,724,124"  target="_self"/>
+					<area id="108" alt="108" title="108" href="#" shape="poly" coords="655,58,720,58,720,124,698,124,698,133,655,133"  target="_self"/>
+					<area id="106" alt="106" title="106" href="#" shape="poly" coords="587,58,651,58,651,133,610,133,610,125,587,125,587,125"  target="_self"/>
+					<area id="104" alt="104" title="104" href="#" shape="poly" coords="516,58,583,58,583,125,560,125,560,133,516,133"  target="_self"/>
+					<area id="115" alt="115" title="115" href="#" shape="poly" coords="471,192,512,192,512,226,481,226"  target="_self"/>
+					<area id="146" alt="146" title="146" href="#" shape="poly" coords="372,58,439,58,439,133,395,133,395,126,372,126"  target="_self"/>
+					<area id="144" alt="144" title="144" href="#" shape="poly" coords="302,58,368,58,368,126,345,126,345,133,302,133"  target="_self"/>
+					<area id="145" alt="145" title="145" href="#" shape="poly" coords="371,161,371,226,439,226,439,155,396,155,396,161"  target="_self"/>
+					<area id="143" alt="143" title="143" href="#" shape="poly" coords="302,154,346,154,346,161,367,161,367,226,302,226"  target="_self"/>
+					<area id="140" alt="140" title="140" href="#" shape="poly" coords="233,58,271,58,271,81,298,81,298,108,272,108,272,133,233,133"  target="_self"/>
+					<area id="142" alt="142" title="142" href="#" shape="poly" coords="276,111,298,111,298,133,276,133"  target="_self"/>
+					<area id="141" alt="141" title="141" href="#" shape="poly" coords="273,154,298,154,298,172,273,172"  target="_self"/>
+					<area id="101" alt="101" title="101" href="#" shape="poly" coords="495,154,512,154,512,188,495,188"  target="_self"/>
+				</map></div>
+			<div class="swapper" id="second" style="display:none;">
+				<img id="mapimg2" src="map2c.png" border="0" width="825" height="374" usemap="#mapimg2" alt="mapimg2"/>
+				<map name="mapimg2" id="ImgMap2">
+					<area id="230D" alt="230D" title="230D" href="#" shape="rect" coords="23,107,89,163" target="_self"/>
+					<area id="230C" alt="230C" title="230C" href="#" shape="rect" coords="23,167,89,218" target="_self"/>
+					<area id="230B" alt="230B" title="230B" href="#" shape="rect" coords="23,222,89,280" target="_self"/>
+					<area id="230E" alt="230E" title="230E" href="#" shape="rect" coords="93,107,117,150" target="_self"/>
+					<area id="230F" alt="230F" title="230F" href="#" shape="rect" coords="121,107,146,150" target="_self"/>
+					<area id="230G" alt="230G" title="230G" href="#" shape="rect" coords="149,107,205,149" target="_self"/>
+					<area id="230-2" alt="230-2" title="230-2" href="#" shape="rect" coords="93,252,128,279" target="_self"/>
+					<area id="230-1" alt="230-1" title="230-1" href="#" shape="rect" coords="130,252,168,279" target="_self"/>
+					<area id="230A" alt="230A" title="230A" href="#" shape="rect" coords="171,236,206,280" target="_self"/>
+					<area id="229" alt="229" title="229" href="#" shape="rect" coords="286,212,313,260" target="_self"/>
+					<area id="232" alt="232" title="232" href="#" shape="rect" coords="184,183,264,210" target="_self"/>
+					<area id="211" alt="211" title="211" href="#" shape="rect" coords="546,215,576,241" target="_self"/>
+					<area id="200" alt="200" title="200" href="#" shape="rect" coords="447,47,509,114" target="_self"/>
+					<area id="210" alt="210" title="210" href="#" shape="rect" coords="713,47,775,106" target="_self"/>
+					<area id="209" alt="209" title="209" href="#" shape="rect" coords="713,151,775,211" target="_self"/>
+					<area id="201" alt="201" title="201" href="#" shape="rect" coords="494,142,512,165" target="_self"/>
+					<area id="238" alt="238" title="238" href="#" shape="poly" coords="209,107,245,107,245,118,264,118,264,149,209,149" target="_self"/>
+					<area id="236" alt="236" title="236" href="#" shape="poly" coords="184,153,264,153,264,179,184,179" target="_self"/>
+					<area id="228" alt="228" title="228" href="#" shape="poly" coords="210,236,246,236,264,267,264,279,210,279" target="_self"/>
+					<area id="226" alt="226" title="226" href="#" shape="poly" coords="280,284,380,284,380,335,271,335,271,300,280,300" target="_self"/>
+					<area id="224" alt="224" title="224" href="#" shape="poly" coords="384,283,413,283,422,334,384,334" target="_self"/>
+					<area id="220" alt="220" title="220" href="#" shape="poly" coords="416,282,469,274,478,327,424,335" target="_self"/>
+					<area id="218" alt="218" title="218" href="#" shape="poly" coords="471,274,502,269,511,321,480,326,476,301" target="_self"/>
+					<area id="216" alt="216" title="216" href="#" shape="poly" coords="505,268,536,264,544,316,514,321" target="_self"/>
+					<area id="214" alt="214" title="214" href="#" shape="poly" coords="539,264,584,264,591,308,547,316" target="_self"/>
+					<area id="212" alt="212" title="212" href="#" shape="poly" coords="580,215,613,215,613,247,646,247,646,300,594,308,586,260,580,260" target="_self"/>
+					<area id="243" alt="243" title="243" href="#" shape="poly" coords="317,142,355,142,355,150,379,150,379,209,316,209" target="_self"/>
+					<area id="245" alt="245" title="245" href="#" shape="poly" coords="383,150,401,150,401,142,443,142,443,209,383,209" target="_self"/>
+					<area id="244" alt="244" title="244" href="#" shape="poly" coords="317,47,379,47,379,106,358,106,358,114,317,114" target="_self"/>
+					<area id="246" alt="246" title="246" href="#" shape="poly" coords="383,47,443,47,443,114,405,114,405,106,383,106" target="_self"/>
+					<area id="240" alt="240" title="240" href="#" shape="poly" coords="249,47,313,47,313,114,293,114,293,92,269,92,269,83,249,83" target="_self"/>
+					<area id="213" alt="213" title="213" href="#" shape="poly" coords="483,215,520,215,520,241,492,249" target="_self"/>
+					<area id="204" alt="204" title="204" href="#" shape="poly" coords="513,47,576,47,576,106,555,106,555,114,513,114" target="_self"/>
+					<area id="206" alt="206" title="206" href="#" shape="poly" coords="580,47,642,47,642,116,602,116,602,106,580,106" target="_self"/>
+					<area id="208" alt="208" title="208" href="#" shape="poly" coords="646,47,709,47,709,106,689,106,689,116,646,116" target="_self"/>
+					<area id="207" alt="207" title="207" href="#" shape="poly" coords="646,142,689,142,689,151,709,151,709,211,646,211" target="_self"/>
+					<area id="205" alt="205" title="205" href="#" shape="poly" coords="602,142,642,142,642,211,580,211,580,150,602,150" target="_self"/>
+					<area id="203" alt="203" title="203" href="#" shape="poly" coords="516,142,555,142,555,150,576,150,576,211,516,211" target="_self"/>
+					<area id="215" alt="215" title="215" href="#" shape="poly" coords="470,169,512,169,512,211,482,211" target="_self"/>
+				</map></div>
+			<div id="textarea"></div>
+
+		</div>
+	</body>
+</html>
